@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{0587d7a3-f2ce-4d56-b84f-a0005d3bfce6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources">
+      <UniqueIdentifier>{08e36723-ce4f-4cff-9662-c40801cf1acf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\utils">
+      <UniqueIdentifier>{d8559f55-8b02-423c-930a-81af289346ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="image">
+      <UniqueIdentifier>{6ef51137-5951-4a9b-abe8-e87761c8f4f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\profile">
+      <UniqueIdentifier>{7ae0ae46-e470-43d6-8fe4-b7a63eea9908}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\class">
+      <UniqueIdentifier>{ec38f505-9b14-4539-a3c0-f3097b487964}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\manager">
+      <UniqueIdentifier>{9a304c36-e2fa-40cc-8175-76b1c9582cd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\gui">
+      <UniqueIdentifier>{951d540a-b81e-47c3-880d-9f84a9f7d0d9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DX11Util.h">
+      <Filter>sources\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="EasingAnimationSystem.h">
+      <Filter>sources\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Images.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageUtil.h">
+      <Filter>sources\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\MathUtil.h">
+      <Filter>sources\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_utils.h">
+      <Filter>sources\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="DropFile.hpp">
+      <Filter>sources\class</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager\DropManager.hpp">
+      <Filter>sources\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\WindowUtil.h">
+      <Filter>sources\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="CallBackManager.h">
+      <Filter>sources\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiMain.h">
+      <Filter>sources\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imconfig.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui_settings.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imstb_rectpack.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imstb_textedit.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imstb_truetype.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\backends\imgui_impl_dx11.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\backends\imgui_impl_win32.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DX11Util.cpp">
+      <Filter>sources\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageUtil.cpp">
+      <Filter>sources\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\Profile.h">
+      <Filter>sources\profile</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\MathUtil.cpp">
+      <Filter>sources\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_utils.cpp">
+      <Filter>sources\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\WindowUtil.cpp">
+      <Filter>sources\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="CallBackManager.cpp">
+      <Filter>sources\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiMain.cpp">
+      <Filter>sources\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile\Profile.cpp">
+      <Filter>sources\profile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui_demo.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui_tables.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\backends\imgui_impl_dx11.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\backends\imgui_impl_win32.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.txt" />
+    <None Include="cpp.hint" />
+  </ItemGroup>
+</Project>
