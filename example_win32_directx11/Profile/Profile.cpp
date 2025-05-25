@@ -1,7 +1,9 @@
 #include "Profile.h"
-#include <imgui.h>
+
 
 using namespace Window;
+
+
 
 bool Application::Init=false;
 bool Application::Exit=false;
@@ -25,6 +27,7 @@ LRESULT WINAPI Procs::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
     switch (msg)
     {
+
     case WM_SIZE:
         if (wParam == SIZE_MINIMIZED)
             return 0;
@@ -50,6 +53,8 @@ LRESULT WINAPI Procs::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 HRESULT Procs::ResourceInit()
 {
-    
+
+
+
     return E_NOTIMPL;
 }

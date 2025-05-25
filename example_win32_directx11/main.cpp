@@ -18,6 +18,7 @@
 #include <imgui_impl_win32.h>
 
 
+
 using namespace Window;
 
 int main(int, char**){
@@ -51,19 +52,21 @@ int main(int, char**){
     ImGuiStyle& style = ImGui::GetStyle();
     style.WindowRounding = 10.0f;
     style.Colors[ImGuiCol_WindowBg].w = 1.0f;
-   
 
-    //初始化资源
+
     Procs::ResourceInit();
 
-    ImGuiContext& g = *GImGui;
+    ImGuiContext& g_context = *GImGui;
+    ImGuiIO g_io = ImGui::GetIO();
+    (void)g_io;
 
-    CallBackManager& callBackManager = CallBackManager::GetInstance(&g.PlatformIO);
+    CallBackManager& callBackManager = CallBackManager::GetInstance(&g_context.PlatformIO);
 
     InitImGuiWithDragDrop();
-    //callBackManager.RegesiterCallBack(BlurCallBack,CALLBACK_CREATE_WINDOW,POST);
+
     callBackManager.SetUpCallBack();
-    
+
+
     ImFontConfig cfg;
     cfg.FontDataOwnedByAtlas = false;
     cfg.FontBuilderFlags = ImGuiFreeTypeBuilderFlags_ForceAutoHint | ImGuiFreeTypeBuilderFlags_LightHinting | ImGuiFreeTypeBuilderFlags_LoadColor;
@@ -79,11 +82,7 @@ int main(int, char**){
 
             ::TranslateMessage(&msg);
             ::DispatchMessage(&msg);
-            if (msg.message == WM_QUIT)
-                Application::Exit = true;
-            if (Application::Exit) {
-                goto END;
-            }
+          
         }
      
         if (WindowDatas.g_SwapChainOccluded && (WindowDatas.g_pSwapChain->Present(0, DXGI_PRESENT_TEST) == DXGI_STATUS_OCCLUDED))
@@ -129,12 +128,8 @@ int main(int, char**){
       }
 
       
-    END:
-    Cleanup(WindowDatas.g_pSwapChain, WindowDatas.g_pd3dDevice, WindowDatas.g_pd3dDeviceContext, WindowDatas.g_mainRenderTargetView);
-
-    CleanupDeviceD3D( WindowDatas.g_pd3dDevice, WindowDatas.g_pSwapChain, WindowDatas.g_pd3dDeviceContext);
-    ::DestroyWindow(BackendWindow);
-    ::UnregisterClassW(BackendWC.lpszClassName, BackendWC.hInstance);
+END:
+    Shutdown(BackendWindow,WindowDatas);
         
     return 0;
 }

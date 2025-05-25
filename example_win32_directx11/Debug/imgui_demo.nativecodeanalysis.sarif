@@ -1,0 +1,494 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“p_open”的引用。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                },
+                "region": {
+                  "startLine": 9870,
+                  "startColumn": 18,
+                  "endLine": 9870,
+                  "endColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ShowExampleAppDockSpace",
+                  "decoratedName": "?ShowExampleAppDockSpace@@YAXPEA_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9797,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9798,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9799,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9803,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9804,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9817,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9822,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9830,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9832,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9833,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9836,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9840,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9841,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9848,
+                            "startColumn": 35
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9851,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9853,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9857,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9858,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9859,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9861,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9862,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9863,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9864,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9865,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9866,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9867,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9869,
+                            "startColumn": 32
+                          }
+                        },
+                        "message": {
+                          "text": "“p_open”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 9870,
+                            "startColumn": 25
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“p_open”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.41.34120.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/项目/imgui-docking (1)/imgui_demo.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "1516ed5a1bbab69b370f99bed27300aae74e5f32af0860399a3053fe1951c826"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/imgui.h"
+          },
+          "hashes": {
+            "sha-256": "e7c47e069e7c2f1ba32332fe9cf3e650b0ee75b254b19f5d5a899c30f1911f83"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/imconfig.h"
+          },
+          "hashes": {
+            "sha-256": "7005b47c841c72167ff332882f3981adbc91a2f5e7af5c642e9f9e08e0eb25e9"
+          }
+        }
+      ]
+    }
+  ]
+}

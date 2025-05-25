@@ -1075,6 +1075,7 @@ CODE
 #endif
 
 #include "imgui.h"
+#include <WindowUtil.h>
 #include <DropManager.hpp>
 #ifndef IMGUI_DISABLE
 #include "imgui_internal.h"
@@ -2127,6 +2128,7 @@ const char* ImStrSkipBlank(const char* str)
 #else
 #include "stb_sprintf.h"
 #endif
+#include <WindowUtil.h>
 
 
 #endif // #ifdef IMGUI_USE_STB_SPRINTF
@@ -3796,6 +3798,8 @@ void ImGui::RenderNavCursor(const ImRect& bb, ImGuiID id, ImGuiNavRenderCursorFl
             window->DrawList->PopClipRect();
     }
 }
+
+
 
 void ImGui::RenderMouseCursor(ImVec2 base_pos, float base_scale, ImGuiMouseCursor mouse_cursor, ImU32 col_fill, ImU32 col_border, ImU32 col_shadow)
 {

@@ -3,6 +3,7 @@
 #include <mutex>
 #include <algorithm>
 #include <imgui.h>
+#include <imgui_internal.h>
 
 #define CHECK_VIEWPORT(vp, ...) \
     do { \

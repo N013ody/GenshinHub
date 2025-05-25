@@ -1,10 +1,93 @@
+#define NANOSVG_IMPLEMENTATION    // 解析器实现
+#define NANOSVGRAST_IMPLEMENTATION // 光栅化器实现
+
 #include "DX11Util.h"
 #include <imgui_impl_win32.h>
 #include <imgui_impl_dx11.h>
 #include "Profile.h"
+#include <wrl/client.h> 
+#include <filesystem>
+#include "nanosvg.h"
+#include "nanosvgrast.h"
 
+using Microsoft::WRL::ComPtr;  
 using namespace Window;
 
+SVGTexture CreateSVGTexture(ID3D11Device* device, const char* svgPath, float scale) {
+    //文件存在
+    if (!std::filesystem::exists(svgPath)) {
+        return {};
+    }
+
+    //SVG解析
+    NSVGimage* svgImage = nsvgParseFromFile(svgPath, "px", 96.0f);
+    if (!svgImage || svgImage->width <= 0 || svgImage->height <= 0) {
+        return {};
+    }
+
+    //计算缩放尺寸
+    int width = static_cast<int>(svgImage->width * scale);
+    int height = static_cast<int>(svgImage->height * scale);
+    if (width == 0 || height == 0) {
+        nsvgDelete(svgImage);
+        return {};
+    }
+
+    //光栅化到内存
+    std::vector<unsigned char> pixels(width * height * 4);
+    NSVGrasterizer* rasterizer = nsvgCreateRasterizer();
+    nsvgRasterize(rasterizer, svgImage, 0, 0, scale,
+        pixels.data(), width, height, width * 4);
+    nsvgDeleteRasterizer(rasterizer);
+
+    //ARGB转RGBA
+    for (int i = 0; i < width * height; ++i) {
+        uint32_t argb = *reinterpret_cast<uint32_t*>(&pixels[i * 4]);
+        pixels[i * 4 + 0] = (argb >> 16) & 0xFF; //R
+        pixels[i * 4 + 1] = (argb >> 8) & 0xFF;  //G
+        pixels[i * 4 + 2] = argb & 0xFF;         //B
+        pixels[i * 4 + 3] = (argb >> 24) & 0xFF; //A
+    }
+
+    // 6. 创建DX11纹理（内存对齐优化）
+    D3D11_TEXTURE2D_DESC desc = {};
+    desc.Width = width;
+    desc.Height = height;
+    desc.MipLevels = 1;
+    desc.ArraySize = 1;
+    desc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+    desc.SampleDesc.Count = 1;
+    desc.Usage = D3D11_USAGE_IMMUTABLE;
+    desc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
+
+    D3D11_SUBRESOURCE_DATA initData = {};
+    initData.pSysMem = pixels.data();
+    initData.SysMemPitch = (width * 4 ) ; //128字节对齐
+
+    ComPtr<ID3D11Texture2D> texture;
+    HRESULT hr = device->CreateTexture2D(&desc, &initData, &texture);
+    if (FAILED(hr)) {
+        nsvgDelete(svgImage);
+        return {};
+    }
+
+    SVGTexture result;
+    hr = device->CreateShaderResourceView(texture.Get(), nullptr, &result.srv);
+    if (FAILED(hr)) {
+        return {};
+    }
+
+    result.size = ImVec2((float)width, (float)height);
+    nsvgDelete(svgImage);
+    return result;
+}
+
+void Shutdown(HWND BackendWindow, DirectXData WindowDats) {
+    Cleanup(WindowDatas.g_pSwapChain, WindowDatas.g_pd3dDevice, WindowDatas.g_pd3dDeviceContext, WindowDatas.g_mainRenderTargetView);
+    CleanupDeviceD3D(WindowDatas.g_pd3dDevice, WindowDatas.g_pSwapChain, WindowDatas.g_pd3dDeviceContext);
+    ::DestroyWindow(BackendWindow);
+    ::UnregisterClassW(BackendWC.lpszClassName, BackendWC.hInstance);
+}
 static bool CreateSRV(ID3D11Device* device, LPCVOID pData, size_t size, ID3D11ShaderResourceView* ptr) {
     HRESULT hr = D3DX11CreateShaderResourceViewFromMemory(device, pData, sizeof(pData), nullptr, nullptr, &ptr, 0);
 

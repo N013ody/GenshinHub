@@ -1,0 +1,59 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.41.34120.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/example_win32_directx11/callbackmanager.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "cdf30aa16388ef6048b02bb4a4a35602d48267fce7727d983ad1070e16bfaa2f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/example_win32_directx11/callbackmanager.h"
+          },
+          "hashes": {
+            "sha-256": "930b30e6f69c8b6faa7099019039ba79b39bc74ae1ac13f7d68cd9865331fa02"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/imgui.h"
+          },
+          "hashes": {
+            "sha-256": "e7c47e069e7c2f1ba32332fe9cf3e650b0ee75b254b19f5d5a899c30f1911f83"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/imconfig.h"
+          },
+          "hashes": {
+            "sha-256": "7005b47c841c72167ff332882f3981adbc91a2f5e7af5c642e9f9e08e0eb25e9"
+          }
+        }
+      ]
+    }
+  ]
+}

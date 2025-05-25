@@ -95,6 +95,7 @@
 typedef DWORD(WINAPI* PFN_XInputGetCapabilities)(DWORD, DWORD, XINPUT_CAPABILITIES*);
 typedef DWORD(WINAPI* PFN_XInputGetState)(DWORD, XINPUT_STATE*);
 #endif
+#include <string>
 
 // Clang/GCC warnings with -Weverything
 #if defined(__clang__)
@@ -730,6 +731,7 @@ IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandlerEx(HWND hwnd, UINT msg, WPA
         return 0;
     }
     case WM_DESTROY:
+
         if (bd->MouseHwnd == hwnd && bd->MouseTrackedArea != 0)
         {
             TRACKMOUSEEVENT tme_cancel = { sizeof(tme_cancel), TME_CANCEL, hwnd, 0 };
@@ -737,10 +739,11 @@ IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandlerEx(HWND hwnd, UINT msg, WPA
             bd->MouseHwnd = nullptr;
             bd->MouseTrackedArea = 0;
             io.AddMousePosEvent(-FLT_MAX, -FLT_MAX);
+
         }
-        //exit(0);
-        Application::Exit = true;
-        return 0;
+
+        break;
+       // return 0;
     case WM_LBUTTONDOWN: case WM_LBUTTONDBLCLK:
     case WM_RBUTTONDOWN: case WM_RBUTTONDBLCLK:
     case WM_MBUTTONDOWN: case WM_MBUTTONDBLCLK:

@@ -20,7 +20,6 @@ ImGuiWindow* GetWindowByHwnd(HWND hwnd) {
     return nullptr;
 }
 
-
 const WNDCLASSEXW GetWindowClass(const std::string& name) {
     WNDCLASSEXW wc = {};
     wc.cbSize = sizeof(WNDCLASSEXW);
@@ -45,8 +44,7 @@ int SetWindowStyles(HWND hwnd, DWORD styleVar) {
     if (result == 0) {
         return 0;
     }
-
-
+   
     SetWindowPos(
         hwnd,
         HWND_TOPMOST,  
@@ -54,6 +52,7 @@ int SetWindowStyles(HWND hwnd, DWORD styleVar) {
         SWP_NOMOVE | SWP_NOSIZE | SWP_FRAMECHANGED | SWP_NOZORDER
     );
 }
+
 bool AreAllPlatformWindowsClosed() {
     ImGuiContext* context = ImGui::GetCurrentContext();
     if (context->Viewports.Size == 0) return true;

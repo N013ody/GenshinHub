@@ -1,0 +1,3457 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6031",
+          "message": {
+            "text": "返回值被忽略: “CoLockObjectExternal”。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/项目/imgui-docking (1)/example_win32_directx11/DropFile.hpp"
+                },
+                "region": {
+                  "startLine": 108,
+                  "startColumn": 9,
+                  "endLine": 108,
+                  "endColumn": 42
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "DropFile::AttachToWindow",
+                  "decoratedName": "?AttachToWindow@DropFile@@QEAAXPEAUHWND__@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6031",
+          "message": {
+            "text": "返回值被忽略: “OleInitialize”。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/项目/imgui-docking (1)/example_win32_directx11/Manager/DropManager.hpp"
+                },
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 20,
+                  "endLine": 36,
+                  "endColumn": 34
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "OleManager::{ctor}",
+                  "decoratedName": "??0OleManager@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C33010",
+          "message": {
+            "text": "已取消选中充当索引的枚举 source 的下限。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 10590,
+                  "startColumn": 5,
+                  "endLine": 10590,
+                  "endColumn": 37
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GetInputSourceName",
+                  "decoratedName": "?GetInputSourceName@@YAPEBDW4ImGuiInputSource@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10586,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10588,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10588,
+                            "startColumn": 40
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10589,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "基于条件“1”进行分支。“true”分支已被占用"
+                        }
+                      },
+                      "kinds": [
+                        "Branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10589,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "基于条件“0 <= source”进行分支。“false”分支已被占用\n检查了枚举值 \"source\" 是否有上限边界。"
+                        }
+                      },
+                      "kinds": [
+                        "Combination"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10589,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10589,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "基于条件“0”进行分支。“false”分支已被占用"
+                        }
+                      },
+                      "kinds": [
+                        "Branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10589,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10589,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10590,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C33010",
+          "message": {
+            "text": "已取消选中充当索引的枚举 source 的下限。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 10596,
+                  "startColumn": 5,
+                  "endLine": 10596,
+                  "endColumn": 37
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GetMouseSourceName",
+                  "decoratedName": "?GetMouseSourceName@@YAPEBDW4ImGuiMouseSource@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10592,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10594,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10594,
+                            "startColumn": 40
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10595,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "基于条件“1”进行分支。“true”分支已被占用"
+                        }
+                      },
+                      "kinds": [
+                        "Branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10595,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "基于条件“0 <= source”进行分支。“false”分支已被占用\n检查了枚举值 \"source\" 是否有上限边界。"
+                        }
+                      },
+                      "kinds": [
+                        "Combination"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10595,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10595,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "基于条件“0”进行分支。“false”分支已被占用"
+                        }
+                      },
+                      "kinds": [
+                        "Branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10595,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10595,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 10596,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“window->Viewport”的引用。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 16187,
+                  "startColumn": 13,
+                  "endLine": 16187,
+                  "endColumn": 74
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::WindowSelectViewport",
+                  "decoratedName": "?WindowSelectViewport@ImGui@@YAXPEAUImGuiWindow@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16062,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16063,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16064,
+                            "startColumn": 48
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16067,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16068,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16073,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16076,
+                            "startColumn": 71
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16082,
+                            "startColumn": 73
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16097,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16098,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16110,
+                            "startColumn": 53
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16117,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16122,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16126,
+                            "startColumn": 44
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16130,
+                            "startColumn": 77
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16140,
+                            "startColumn": 14
+                          }
+                        },
+                        "message": {
+                          "text": "“window->Viewport”可能为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16141,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16146,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“window->Viewport==0”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16147,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16151,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“!lock_viewport”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16153,
+                            "startColumn": 19
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“flags”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16165,
+                            "startColumn": 144
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16183,
+                            "startColumn": 65
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“<分支条件>”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16187,
+                            "startColumn": 56
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“window->Viewport”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“window”的引用。查看第 16063 行以找出可能会发生此情况的前一位置"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 16192,
+                  "startColumn": 5,
+                  "endLine": 16192,
+                  "endColumn": 56
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::WindowSelectViewport",
+                  "decoratedName": "?WindowSelectViewport@ImGui@@YAXPEAUImGuiWindow@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16062,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16063,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16064,
+                            "startColumn": 48
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16067,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16068,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16073,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16076,
+                            "startColumn": 71
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16082,
+                            "startColumn": 73
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16097,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16098,
+                            "startColumn": 32
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16110,
+                            "startColumn": 53
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16117,
+                            "startColumn": 31
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16122,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“flags”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16126,
+                            "startColumn": 44
+                          }
+                        },
+                        "message": {
+                          "text": "“window”是“ImGui::GetWindowAlwaysWantOwnViewport”的输入/输出参数(在第 1273 行中声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16126,
+                            "startColumn": 44
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16130,
+                            "startColumn": 77
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16140,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16141,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16146,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“window->Viewport==0”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16147,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "“window”是“ImGui::UpdateTryMergeWindowIntoHostViewport”的输入/输出参数(在第 1271 行中声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16147,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“<分支条件>”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16148,
+                            "startColumn": 30
+                          }
+                        },
+                        "message": {
+                          "text": "“window”是“ImGui::AddUpdateViewport”的输入/输出参数(在第 1265 行中声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16151,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“!lock_viewport”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16153,
+                            "startColumn": 19
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“flags”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16165,
+                            "startColumn": 144
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16183,
+                            "startColumn": 65
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“<分支条件>”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16187,
+                            "startColumn": 56
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 16192,
+                            "startColumn": 27
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“window”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“node”的引用。查看第 17172 行以找出可能会发生此情况的前一位置"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 17261,
+                  "startColumn": 9,
+                  "endLine": 17261,
+                  "endColumn": 40
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::DockContextProcessDock",
+                  "decoratedName": "?DockContextProcessDock@ImGui@@YAXPEAUImGuiContext@@PEAUImGuiDockRequest@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17134,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17135,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17137,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17138,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17140,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17141,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17142,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17143,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17146,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17149,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17150,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17151,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17163,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17165,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17169,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17171,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17172,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17173,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17174,
+                            "startColumn": 43
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17182,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17183,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17194,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17196,
+                            "startColumn": 14
+                          }
+                        },
+                        "message": {
+                          "text": "“node”可能为 NULL (跳过此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17261,
+                            "startColumn": 38
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“node”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“node->TabBar”的引用。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 17492,
+                  "startColumn": 13,
+                  "endLine": 17492,
+                  "endColumn": 81
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::DockNodeAddWindow",
+                  "decoratedName": "?DockNodeAddWindow@ImGui@@YAXPEAUImGuiDockNode@@PEAUImGuiWindow@@_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17451,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17451,
+                            "startColumn": 38
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17452,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17458,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17459,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17464,
+                            "startColumn": 61
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17467,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17468,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17469,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17470,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17471,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17472,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17476,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17487,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17489,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "“node->TabBar”可能为 NULL (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17491,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17492,
+                            "startColumn": 41
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“node->TabBar”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28182",
+          "message": {
+            "text": "取消对 NULL 指针的引用。“node”包含与“info->CentralNode”相同的 NULL 值。查看第 17665 行以找出可能会发生此情况的前一位置"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 17679,
+                  "startColumn": 9,
+                  "endLine": 17679,
+                  "endColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "DockNodeFindInfo",
+                  "decoratedName": "?DockNodeFindInfo@@YAXPEAUImGuiDockNode@@PEAUImGuiDockNodeTreeInfo@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17665,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17671,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17673,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17674,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17675,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17677,
+                            "startColumn": 41
+                          }
+                        },
+                        "message": {
+                          "text": "“node”可能为 NULL (跳过此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17679,
+                            "startColumn": 27
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“node->ChildNodes[0]”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 17679,
+                            "startColumn": 27
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“node”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“merge_lead_child”的引用。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 19026,
+                  "startColumn": 5,
+                  "endLine": 19026,
+                  "endColumn": 50
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::DockNodeTreeMerge",
+                  "decoratedName": "?DockNodeTreeMerge@ImGui@@YAXPEAUImGuiContext@@PEAUImGuiDockNode@@1@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19000,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19001,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19002,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19003,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19004,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "“merge_lead_child”可能为 NULL (进入此循环)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19005,
+                            "startColumn": 48
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19010,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19012,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19013,
+                            "startColumn": 27
+                          }
+                        },
+                        "message": {
+                          "text": "“merge_lead_child”是“ImGui::DockNodeMoveChildNodes”的输入/输出参数(在第 16677 行中声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19014,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“child_0”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19019,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“child_1”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19021,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19022,
+                            "startColumn": 41
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19024,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19025,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 19026,
+                            "startColumn": 32
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“merge_lead_child”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "取消对 NULL 指针“node”的引用。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 20063,
+                  "startColumn": 9,
+                  "endLine": 20063,
+                  "endColumn": 33
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::BeginDocked",
+                  "decoratedName": "?BeginDocked@ImGui@@YAXPEAUImGuiWindow@@PEA_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20014,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20017,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20019,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20020,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20031,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20032,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20033,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20034,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20042,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20043,
+                            "startColumn": 14
+                          }
+                        },
+                        "message": {
+                          "text": "“node”可能为 NULL (跳过此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20045,
+                            "startColumn": 29
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“window->DockId!=0&&node==0”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20063,
+                            "startColumn": 30
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“node”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28182",
+          "message": {
+            "text": "取消对 NULL 指针的引用。“window->DockNode”包含与“node”相同的 NULL 值。查看第 20063 行以找出可能会发生此情况的前一位置"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                },
+                "region": {
+                  "startLine": 20134,
+                  "startColumn": 18,
+                  "endLine": 20134,
+                  "endColumn": 50
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImGui::BeginDocked",
+                  "decoratedName": "?BeginDocked@ImGui@@YAXPEAUImGuiWindow@@PEA_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20014,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20017,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20019,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20020,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20031,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20032,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20033,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20034,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20042,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20043,
+                            "startColumn": 14
+                          }
+                        },
+                        "message": {
+                          "text": "“node”可能为 NULL (跳过此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20045,
+                            "startColumn": 29
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“window->DockId!=0&&node==0”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20063,
+                            "startColumn": 30
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20075,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20080,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“node->HostWindow==0”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20090,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "进入此循环(假定“!!((node->HostWindow))”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20091,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "进入此循环(假定“!!((node->IsLeafNode()))”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20092,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "进入此循环(假定“<分支条件>”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20093,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20096,
+                            "startColumn": 65
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20103,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20104,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20105,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20106,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20107,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20108,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20109,
+                            "startColumn": 27
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“node->MergedFlags”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20113,
+                            "startColumn": 29
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“node->VisibleWindow==window”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20117,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "进入此循环(假定“<分支条件>”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20118,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20119,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20120,
+                            "startColumn": 32
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20123,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20127,
+                            "startColumn": 22
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20130,
+                            "startColumn": 71
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此分支(假定“<分支条件>”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+                          },
+                          "region": {
+                            "startLine": 20134,
+                            "startColumn": 18
+                          }
+                        },
+                        "message": {
+                          "text": "已取消对“node”的引用，但可能仍为 NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.41.34120.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/项目/imgui-docking (1)/example_win32_directx11/DropFile.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "7c7c2a43a42569b311d949cae495fe74e6e53aa43f2a7521dff8da32384a9f30"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/项目/imgui-docking (1)/example_win32_directx11/Manager/DropManager.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "43a6111a54b953acd620e24e000532164c3540de314ff7cf5d7e69f6d9dfc0a2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/项目/imgui-docking (1)/imgui.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "b9bf2ebebefd2b8208a6ee167afdccbf955ff484f5af285ff9031285b7dcca13"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/imgui.h"
+          },
+          "hashes": {
+            "sha-256": "e7c47e069e7c2f1ba32332fe9cf3e650b0ee75b254b19f5d5a899c30f1911f83"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/imconfig.h"
+          },
+          "hashes": {
+            "sha-256": "7005b47c841c72167ff332882f3981adbc91a2f5e7af5c642e9f9e08e0eb25e9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/example_win32_directx11/utils/windowutil.h"
+          },
+          "hashes": {
+            "sha-256": "b446f4dd3f81e361e2bca3dc53b402830f62f387c217bfc833d3eba571aad7b1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/imgui_internal.h"
+          },
+          "hashes": {
+            "sha-256": "ec46761786fa476d4147ee2ce6200f2101d1aab845b9a1a30a53cb5b78e4941e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/example_win32_directx11/callbackmanager.h"
+          },
+          "hashes": {
+            "sha-256": "930b30e6f69c8b6faa7099019039ba79b39bc74ae1ac13f7d68cd9865331fa02"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -84,6 +84,9 @@
     <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)$(Configuration)\</IntDir>
   </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>false</VcpkgEnableManifest>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
@@ -102,9 +105,10 @@
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(WindowsSDK_IncludePath);$(DXSDK_DIR)Include;$(ProjectDir);..\..\imgui-docking (1);..\example_win32_directx11\Profile;..\example_win32_directx11\Utils;..\example_win32_directx11\Blur;..\example_win32_directx11\Manager;..\backends;..\misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(VcpkgRoot)\installed\x64-windows\include\nanosvg;$(WindowsSDK_IncludePath);$(DXSDK_DIR)Include;$(ProjectDir);..\..\imgui-docking (1);..\example_win32_directx11\Profile;..\example_win32_directx11\Utils;..\example_win32_directx11\Blur;..\example_win32_directx11\Manager;..\backends;..\misc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -154,6 +158,7 @@
   <ItemGroup>
     <ClInclude Include="..\backends\imgui_impl_dx11.h" />
     <ClInclude Include="..\backends\imgui_impl_win32.h" />
+    <ClInclude Include="..\backends\pimgui.h" />
     <ClInclude Include="..\imconfig.h" />
     <ClInclude Include="..\imgui.h" />
     <ClInclude Include="..\imgui_internal.h" />
@@ -176,12 +181,14 @@
   <ItemGroup>
     <ClCompile Include="..\backends\imgui_impl_dx11.cpp" />
     <ClCompile Include="..\backends\imgui_impl_win32.cpp" />
+    <ClCompile Include="..\backends\pimgui.cpp" />
     <ClCompile Include="..\imgui.cpp" />
     <ClCompile Include="..\imgui_demo.cpp" />
     <ClCompile Include="..\imgui_draw.cpp" />
     <ClCompile Include="..\imgui_tables.cpp" />
     <ClCompile Include="..\imgui_widgets.cpp" />
     <ClCompile Include="CallBackManager.cpp" />
+    <ClCompile Include="custom_widgets.cpp" />
     <ClCompile Include="DX11Util.cpp" />
     <ClCompile Include="GuiMain.cpp" />
     <ClCompile Include="ImageUtil.cpp" />

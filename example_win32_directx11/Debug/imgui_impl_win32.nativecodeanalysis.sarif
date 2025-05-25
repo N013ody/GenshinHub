@@ -1,0 +1,123 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.41.34120.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/backends/imgui_impl_win32.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "33e3b0ecaf88462555d850468d9e95fe06c61405ce2d20980e7c48ff44945a4a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/example_win32_directx11/profile/profile.h"
+          },
+          "hashes": {
+            "sha-256": "ee03b558091d2e818315d8e79dc52e04d592968c9e23b47dace3160c4e788f24"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/example_win32_directx11/dx11util.h"
+          },
+          "hashes": {
+            "sha-256": "ec35d5386f542edace91d4dd14a5405b5f4fe31ddf0117b5f6c8b3d924170747"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/program files (x86)/microsoft directx sdk (june 2010)/include/d3dx11tex.h"
+          },
+          "hashes": {
+            "sha-256": "478f8ab08cbf8f873e825bdf3928f398ea30a3ebcf13733466c2cff23932c4b3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/program files (x86)/microsoft directx sdk (june 2010)/include/d3dx11.h"
+          },
+          "hashes": {
+            "sha-256": "c545b43ed4cf702fbd7cb8c40342504c0034206e4171fe84546b4387b74e39bd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/program files (x86)/microsoft directx sdk (june 2010)/include/d3d11.h"
+          },
+          "hashes": {
+            "sha-256": "3a55b560eedcb277bd1a597ff5855badc423cf0c24cb2e64b8731b5dfd8498e1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/program files (x86)/microsoft directx sdk (june 2010)/include/d3dx11core.h"
+          },
+          "hashes": {
+            "sha-256": "3357181adc8c86e8bae58ba8acc081adc9acc2ffa595c5965af50366243cd152"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/program files (x86)/microsoft directx sdk (june 2010)/include/d3dx11async.h"
+          },
+          "hashes": {
+            "sha-256": "709f6379f69458edcbac8a3f02e71e8f31169237f6afbe802dd09a9565e7654f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/imgui.h"
+          },
+          "hashes": {
+            "sha-256": "e7c47e069e7c2f1ba32332fe9cf3e650b0ee75b254b19f5d5a899c30f1911f83"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/imconfig.h"
+          },
+          "hashes": {
+            "sha-256": "7005b47c841c72167ff332882f3981adbc91a2f5e7af5c642e9f9e08e0eb25e9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/imgui_internal.h"
+          },
+          "hashes": {
+            "sha-256": "ec46761786fa476d4147ee2ce6200f2101d1aab845b9a1a30a53cb5b78e4941e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/项目/imgui-docking (1)/backends/imgui_impl_win32.h"
+          },
+          "hashes": {
+            "sha-256": "e51b128793087e976b4c156e264e4d12f6b95effab8e1c7148be5d9141959e2e"
+          }
+        }
+      ]
+    }
+  ]
+}

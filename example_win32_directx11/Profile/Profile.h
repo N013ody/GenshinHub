@@ -2,11 +2,14 @@
 #pragma once
 #include <wtypes.h>
 #include <DX11Util.h>
+#include <imgui.h>
+#include <imgui_internal.h>
 
 
 namespace Application {
     extern bool Init;  
-    extern bool Exit;  
+    extern bool Exit;
+
 }
 
 namespace Procs {
@@ -19,12 +22,10 @@ namespace Procs {
 
 namespace Window {
 
-
     extern HWND BackendWindow;
 
     extern DirectXData WindowDatas;
 
     extern WNDCLASSEXW BackendWC;
-
 
 }

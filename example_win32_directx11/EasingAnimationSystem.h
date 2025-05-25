@@ -3,6 +3,7 @@
 #include <memory>
 #include <cmath>
 #include <imgui.h>
+
 #define IM_EASING_PI 3.14159265358979323846f
 
 namespace ImEasing {
@@ -131,11 +132,20 @@ namespace ImEasing {
         }
     }
 
+
+    class IAnimatable {
+    public:
+        virtual void Update() = 0;
+        virtual ~IAnimatable() = default;
+    };
+
    
     class AnimationCallback {
     public:
         template<typename T>
         using CallbackType = std::function<void(const T&, float)>;
+
+
 
         virtual ~AnimationCallback() = default;
         virtual void Execute(const void* data, float t) = 0;
@@ -156,8 +166,11 @@ namespace ImEasing {
     };
 
     template<typename T>
-    class Animation {
+    class Animation : public IAnimatable {
     public:
+        using TriggerAction = std::function<void()>;
+        using TriggerPoint = std::pair<float, TriggerAction>;
+
         // @Params  duration  动画持续时间
         // @Params  delay  延迟时间
         // @Params  loopCount  循环次数 -1无限循环
@@ -169,7 +182,7 @@ namespace ImEasing {
             bool pingPong = false;
             std::function<float(float)> easing = Ease::Linear;
         };
-        //一共三个状态 
+  
         enum State { Stopped, Running, Paused };
 
         void Start(const T& startVal, const T& endVal, const Params& params = {}) {
@@ -180,26 +193,45 @@ namespace ImEasing {
             m_startTime = ImGui::GetTime();
             m_progress = 0.0f;
         }
-        //更新动画 放在主循环体中使用
+
+        void Update() override {
+            this->Update(); 
+        }
+        //更新动画 
         T Update() {
             if (m_state != Running) return CurrentValue();
 
+            const float lastProgress = m_progress; 
+ 
             const float now = ImGui::GetTime();
             const float elapsed = now - m_startTime - m_params.delay;
-
             if (elapsed < 0) return CurrentValue();
 
-            m_progress = my_clamp(elapsed / m_params.duration, 0.0f, 1.0f);
+            m_progress = std::clamp(elapsed / m_params.duration, 0.0f, 1.0f);
             const float t = m_params.easing(m_progress);
             T current = Lerp(m_start, m_end, t);
 
+            //触发点检测
+            for (auto& [progress, action] : m_triggers) {
+                if (lastProgress < progress && m_progress >= progress) {
+                    action();
+                }
+            }
+
+            //回调函数
             if (m_callback)
                 m_callback->Execute(&current, m_progress);
 
+      
             if (m_progress >= 1.0f)
                 HandleLoop();
 
             return current;
+        }
+
+        //注册新的动画
+        void AddTrigger(float progress, TriggerAction action) {
+            m_triggers.emplace_back(progress, action);
         }
         //回调函数
         void SetCallback(std::shared_ptr<AnimationCallback> callback) {
@@ -273,6 +305,32 @@ namespace ImEasing {
         float m_progress = 0.0f;
         int m_loopCount = 0;
         std::shared_ptr<TypedCallback<T>> m_callback;
+        std::vector<TriggerPoint> m_triggers;
     };
 
+    class AnimationController {
+    public:
+        template<typename T>
+        void AddAnimation(std::shared_ptr<Animation<T>> anim) {
+            m_activeAnims.emplace_back(anim);
+        }
+
+        void UpdateAll() {
+            auto it = m_activeAnims.begin();
+            while (it != m_activeAnims.end()) {
+                if (auto anim = it->lock()) {
+                    anim->Update();
+                    ++it;
+                }
+                else {
+                    it = m_activeAnims.erase(it);
+                }
+            }
+        }
+
+    private:
+        std::vector<std::weak_ptr<IAnimatable>> m_activeAnims;
+    };
+
+    
 } 
