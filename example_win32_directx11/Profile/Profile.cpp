@@ -3,7 +3,9 @@
 
 using namespace Window;
 
+LottieAnimator Global::g_animator;
 
+SVGCacheManager Global::cacheManager;
 
 bool Application::Init=false;
 bool Application::Exit=false;

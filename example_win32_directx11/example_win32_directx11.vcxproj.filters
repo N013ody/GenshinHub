@@ -7,9 +7,6 @@
     <Filter Include="sources">
       <UniqueIdentifier>{08e36723-ce4f-4cff-9662-c40801cf1acf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="image">
-      <UniqueIdentifier>{6ef51137-5951-4a9b-abe8-e87761c8f4f4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="sources\profile">
       <UniqueIdentifier>{7ae0ae46-e470-43d6-8fe4-b7a63eea9908}</UniqueIdentifier>
     </Filter>
@@ -31,6 +28,12 @@
     <Filter Include="imgui\pandora imgui\manager">
       <UniqueIdentifier>{9a304c36-e2fa-40cc-8175-76b1c9582cd7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{388b31c7-80de-4a58-920f-13a924fd3658}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources">
+      <UniqueIdentifier>{6ef51137-5951-4a9b-abe8-e87761c8f4f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DX11Util.h">
@@ -40,7 +43,7 @@
       <Filter>imgui\pandora imgui\utils</Filter>
     </ClInclude>
     <ClInclude Include="Images.h">
-      <Filter>image</Filter>
+      <Filter>resources</Filter>
     </ClInclude>
     <ClInclude Include="ImageUtil.h">
       <Filter>imgui\pandora imgui\utils</Filter>
@@ -95,6 +98,18 @@
     </ClInclude>
     <ClInclude Include="..\backends\pimgui.h">
       <Filter>imgui\pandora imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="LottieAnimator.h">
+      <Filter>imgui\pandora imgui\class</Filter>
+    </ClInclude>
+    <ClInclude Include="SVGCacheManager.hpp">
+      <Filter>imgui\pandora imgui\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeHelper.hpp">
+      <Filter>imgui\pandora imgui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Shaders.h">
+      <Filter>resources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -155,9 +170,26 @@
     <ClCompile Include="custom_widgets.cpp">
       <Filter>imgui\pandora imgui\custom</Filter>
     </ClCompile>
+    <ClCompile Include="LottieAnimator.cpp">
+      <Filter>imgui\pandora imgui\class</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.txt" />
     <None Include="cpp.hint" />
+    <None Include="PsShader.cso">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="VsShader.cso">
+      <Filter>shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="testShaders\PsShader.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="testShaders\VsShader.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

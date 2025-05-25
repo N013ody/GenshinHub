@@ -1,7 +1,7 @@
 #pragma once
 #include <d3d11.h>
-#include <D3DX11tex.h>
 #include "imgui.h"
+#include <nanosvg.h>
 
 
 
@@ -14,6 +14,18 @@ struct DirectXData {
     bool                     g_SwapChainOccluded = false;
     UINT                     g_ResizeWidth = 0, g_ResizeHeight = 0;
     ID3D11RenderTargetView* g_mainRenderTargetView = nullptr;
+
+    ID3D11RasterizerState* g_origRasterizer = nullptr;
+    ID3D11BlendState* g_origBlendState = nullptr;
+    ID3D11DepthStencilState* g_origDepthStencil = nullptr;
+    FLOAT g_origBlendFactor[4] = { 0 };
+    UINT g_origSampleMask = 0;
+    UINT g_origStencilRef = 0;
+
+    ID3D11Texture2D* g_pRenderTargetTexture = nullptr;
+    ID3D11RenderTargetView* g_pRenderTargetView = nullptr;
+    ID3D11ShaderResourceView* g_pShaderResourceView = nullptr;
+
 };
 
 struct SVGTexture {
@@ -21,10 +33,13 @@ struct SVGTexture {
     ImVec2 size;
 };
 
+SVGTexture GetSVGTexture(ID3D11Device* device, NSVGimage* svgImage, float scale,bool release=false);
 
-SVGTexture CreateSVGTexture(ID3D11Device* device, const char* svgPath, float scale=1.0f);
+SVGTexture CreateSVGTexture(ID3D11Device* device, NSVGimage* svgImage, float scale=1.0f, bool release = false);
 
-bool CreateSRV(ID3D11Device* device, LPCVOID pData, size_t size, ID3D11ShaderResourceView* ptr);
+SVGTexture CreateSVGTexture(ID3D11Device* device, const char* svgPath, float scale=1.0f, bool release = false);
+
+bool CreateShaderTarget(ID3D11Device* g_pd3dDevice, ID3D11Texture2D** g_pRenderTargetTexture, ID3D11RenderTargetView** g_pRenderTargetView, ID3D11ShaderResourceView** g_pShaderResourceView);
 
 void Cleanup(IDXGISwapChain* swapChain, ID3D11Device* device, ID3D11DeviceContext* deviceContext, ID3D11RenderTargetView* renderTargetView);
 

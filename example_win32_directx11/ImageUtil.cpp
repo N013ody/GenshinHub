@@ -4,17 +4,17 @@
 #include "ImageUtil.h"
 
 bool PlayImage(ImTextureID texture, ImVec2 size, int totalFrames, PlayDirection direction,
-    float frameDuration, AnimParams& params, bool resetOnStart )
+    float frameDuration, AnimParams& params, bool resetOnStart,bool debugText )
 {
-    // 参数有效性检查
+    //参数有效性检查
     if (!texture || totalFrames <= 0 || frameDuration <= 0.0f)
         return false;
 
-    // 动态最小帧间隔限制（防止超过刷新率）
+    //动态最小帧间隔限制
     static float minFrameDuration = 1.0f / ImGui::GetIO().Framerate;
     frameDuration = (frameDuration < minFrameDuration) ? minFrameDuration : frameDuration;
 
-    // 重置动画状态
+    //重置动画状态
     if (resetOnStart && params.isCompleted) {
         params.currentTime = 0.0f;
         params.currentFrame = 0;
@@ -23,14 +23,14 @@ bool PlayImage(ImTextureID texture, ImVec2 size, int totalFrames, PlayDirection 
         params.fpsFrames = 0;
     }
 
-    // 时间驱动动画更新
+    //时间驱动动画更新
     float deltaTime = ImGui::GetIO().DeltaTime;
     if (!params.isCompleted) {
         int previousFrame = params.currentFrame;
         params.currentTime += deltaTime;
         params.currentFrame = static_cast<int>(params.currentTime / frameDuration);
 
-        // 动画帧率统计
+        //动画帧率统计
         if (params.currentFrame != previousFrame) {
             params.fpsFrames++;
             params.fpsTimer += deltaTime;
@@ -79,6 +79,7 @@ bool PlayImage(ImTextureID texture, ImVec2 size, int totalFrames, PlayDirection 
 
     // 渲染图像及调试信息
     ImGui::Image(texture, size, uv0, uv1);
+    if(debugText)
     ImGui::Text("Frame: %d/%d | AnimFPS: %.1f | RenderFPS: %.1f",
         params.currentFrame + 1, totalFrames,
         params.actualFPS, ImGui::GetIO().Framerate);

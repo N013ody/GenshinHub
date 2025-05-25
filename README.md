@@ -4,6 +4,9 @@
 
 ## 🚀 核心功能 / Core Features
 
+让你的Imgui更像一个普通的Windows程序
+Making Your ImGui Application Resemble a Native Windows Program
+
 ### 视觉增强 / Visual Enhancements
 1. ​**动态纹理控制** 
    支持 360° 旋转与参数化调节  
@@ -27,16 +30,19 @@
    ✓ 支持 TTF/OTF 动态缩放  
    *Integrated FreeType with auto font atlas generation*
 
-5. ​**窗口管理/Window Handle**  
-   - 原生文件拖放支持 / Native drag-and-drop  
-   - 隐藏式后端窗口模式 / Hidden backend window  
+5. ​**窗口/Window e**  
+   - 原生文件拖放支持 / Support drag-and-drop  
+   - 隐藏后端窗口 / Hidden backend window  
    - 多视口隔离渲染 / Multi-viewport isolation
   
 6.  **SVG支持/SVG Support** 
     - 支持直接渲染SVG / SVG render
     - 支持SVG动画 / SVG animation  
 
-7.  **动画系统**
+7.  **动画系统/Animation System**
+     - 简单易用的动画系统 / User-Friendly Animation System
+     - 集成的缓动函数 / Integrated Easing Functions
+  
 ## 🔮 开发路线 / Future Roadmap
 
 |--------|-----------------------------|--------------|

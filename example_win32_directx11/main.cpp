@@ -16,14 +16,15 @@
 #include <GuiMain.h>
 #include <imgui_impl_dx11.h>
 #include <imgui_impl_win32.h>
-
+#include <Shaders.h>
 
 
 using namespace Window;
+using namespace Global;
+
+
 
 int main(int, char**){
-    
-
 
     BackendWC=GetWindowClass("Pandora ImGui");
 
@@ -53,8 +54,16 @@ int main(int, char**){
     style.WindowRounding = 10.0f;
     style.Colors[ImGuiCol_WindowBg].w = 1.0f;
 
-
     Procs::ResourceInit();
+
+    cacheManager.SetDevice(Window::WindowDatas.g_pd3dDevice);
+    cacheManager.LoadSVG("testsvg.svg");
+
+    if (!g_animator.Init("animation_test.json", Window::WindowDatas.g_pd3dDevice, 212, 212,false)) {
+        return 0;
+    }
+
+
 
     ImGuiContext& g_context = *GImGui;
     ImGuiIO g_io = ImGui::GetIO();
@@ -70,6 +79,8 @@ int main(int, char**){
     ImFontConfig cfg;
     cfg.FontDataOwnedByAtlas = false;
     cfg.FontBuilderFlags = ImGuiFreeTypeBuilderFlags_ForceAutoHint | ImGuiFreeTypeBuilderFlags_LightHinting | ImGuiFreeTypeBuilderFlags_LoadColor;
+
+    float clearColor[4] = { 0.f, 0.f, 0.0f, 0.f };
 
 
     while (!Application::Exit)
@@ -102,17 +113,14 @@ int main(int, char**){
         }
 
      
-        float clearColor[4] = { 0.f, 0.f, 0.0f, 0.f };
-        WindowDatas.g_pd3dDeviceContext->ClearRenderTargetView(WindowDatas.g_mainRenderTargetView, clearColor);
-
-
         ImGui_ImplDX11_NewFrame();
         ImGui_ImplWin32_NewFrame();
         ImGui::NewFrame(); {
-            //Render Function
             RenderMainWindow();
         }
         ImGui::Render();
+
+      
         ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 
         if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)

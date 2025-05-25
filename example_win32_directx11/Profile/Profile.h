@@ -4,7 +4,15 @@
 #include <DX11Util.h>
 #include <imgui.h>
 #include <imgui_internal.h>
+#include <SVGCacheManager.hpp>
+#include <LottieAnimator.h>
 
+
+namespace Global {
+    extern SVGCacheManager cacheManager;
+
+    extern LottieAnimator g_animator;
+}
 
 namespace Application {
     extern bool Init;  
