@@ -54,11 +54,12 @@ Making Your ImGui Application Resemble a Native Windows Program
 
 ## 原项目地址/Original project
 Dear-imgui-docking 项目地址: https://github.com/ocornut/imgui/tree/docking
-
 Dear-imgui-docking : https://github.com/ocornut/imgui/tree/docking
 
-This project uses : https://github.com/memononen/nanosvg
 
+## 相关项目
+- [rolttie](https://github.com/user/projectB)：提供了lottie动画相关功能。
+- [nanosvg](https://github.com/memononen/nanosvg)：SVG相关。
 ## 总而言之/All in all
 这是一坨答辩，我的编程水平很低。
 
