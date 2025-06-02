@@ -53,13 +53,12 @@ Making Your ImGui Application Resemble a Native Windows Program
 |--------|-----------------------------|--------------|
 
 ## 原项目地址/Original project
-Dear-imgui-docking 项目地址: https://github.com/ocornut/imgui/tree/docking
-Dear-imgui-docking : https://github.com/ocornut/imgui/tree/docking
+- [Dear-imgui-docking](https://github.com/ocornut/imgui/tree/docking)
 
 
-## 引用项目/
+## 引用项目/Project Dependency​
 - [rlottie](https://github.com/Samsung/rlottie)：提供了lottie动画相关功能。
-- [nanosvg](https://github.com/memononen/nanosvg)：SVG相关。
+- [nanosvg](https://github.com/memononen/nanosvg)：提供了SVG加载等功能。
 - svg 以及 lottie 测试资源均来自 iconfont
 
 ## 总而言之/All in all
