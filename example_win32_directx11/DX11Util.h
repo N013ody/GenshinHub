@@ -33,7 +33,7 @@ struct SVGTexture {
     ImVec2 size;
 };
 
-SVGTexture GetSVGTexture(ID3D11Device* device, NSVGimage* svgImage, float scale,bool release=false);
+SVGTexture GetSVGTexture(ID3D11Device* device, NSVGimage* svgImage,float scale, int scaledWidth, int scaledHeight, bool release);
 
 SVGTexture CreateSVGTexture(ID3D11Device* device, NSVGimage* svgImage, float scale=1.0f, bool release = false);
 

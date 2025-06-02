@@ -1,5 +1,5 @@
-#define NANOSVG_IMPLEMENTATION    // 解析器实现
-#define NANOSVGRAST_IMPLEMENTATION // 光栅化器实现
+#define NANOSVG_IMPLEMENTATION 
+#define NANOSVGRAST_IMPLEMENTATION 
 
 #include "DX11Util.h"
 #include <imgui_impl_win32.h>
@@ -13,28 +13,20 @@
 using Microsoft::WRL::ComPtr;  
 using namespace Window;
 
-//获取
-SVGTexture GetSVGTexture(ID3D11Device* device,NSVGimage* svgImage,float scale,bool release) {
 
-    std::vector<unsigned char> pixels(svgImage->width * svgImage->height * 4);
+SVGTexture GetSVGTexture(ID3D11Device* device, NSVGimage* svgImage, float scale, int scaledWidth, int scaledHeight, bool release) {
+    //分配像素缓冲区
+    std::vector<unsigned char> pixels(scaledWidth * scaledHeight * 4);
     NSVGrasterizer* rasterizer = nsvgCreateRasterizer();
-    nsvgRasterize(rasterizer, svgImage, 0, 0, scale,
-        pixels.data(), svgImage->width, svgImage->height, svgImage->width * 4);
+    //光栅化到缩放后的尺寸
+    nsvgRasterize(rasterizer, svgImage, 0, 0, scale, pixels.data(), scaledWidth, scaledHeight, scaledWidth * 4);
     nsvgDeleteRasterizer(rasterizer);
 
-    //ARGB转RGBA
-    for (int i = 0; i < svgImage->width * svgImage->height; ++i) {
-        uint32_t argb = *reinterpret_cast<uint32_t*>(&pixels[i * 4]);
-        pixels[i * 4 + 0] = (argb >> 16) & 0xFF; //R
-        pixels[i * 4 + 1] = (argb >> 8) & 0xFF;  //G
-        pixels[i * 4 + 2] = argb & 0xFF;         //B
-        pixels[i * 4 + 3] = (argb >> 24) & 0xFF; //A
-    }
 
-    //创建DX11纹
+    //创建DX11纹理
     D3D11_TEXTURE2D_DESC desc = {};
-    desc.Width = svgImage->width;
-    desc.Height = svgImage->height;
+    desc.Width = scaledWidth;
+    desc.Height = scaledHeight;
     desc.MipLevels = 1;
     desc.ArraySize = 1;
     desc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
@@ -44,7 +36,7 @@ SVGTexture GetSVGTexture(ID3D11Device* device,NSVGimage* svgImage,float scale,bo
 
     D3D11_SUBRESOURCE_DATA initData = {};
     initData.pSysMem = pixels.data();
-    initData.SysMemPitch = (svgImage->width * 4); //128字节对齐
+    initData.SysMemPitch = (scaledWidth * 4); //128字节对齐
 
     ComPtr<ID3D11Texture2D> texture;
     HRESULT hr = device->CreateTexture2D(&desc, &initData, &texture);
@@ -59,7 +51,8 @@ SVGTexture GetSVGTexture(ID3D11Device* device,NSVGimage* svgImage,float scale,bo
         return {};
     }
 
-    result.size = ImVec2((float)svgImage->width, (float)svgImage->height);
+    result.size = ImVec2(static_cast<float>(scaledWidth), static_cast<float>(scaledHeight));
+
     if(release)nsvgDelete(svgImage);
     return result;
 
@@ -77,7 +70,7 @@ SVGTexture CreateSVGTexture(ID3D11Device* device, NSVGimage* svgImage, float sca
         nsvgDelete(svgImage);
         return {};
     }
-    SVGTexture result=GetSVGTexture(device,svgImage,scale,release);
+    SVGTexture result=GetSVGTexture(device,svgImage,scale,width,height,release);
     return result;
 }
 
@@ -100,7 +93,7 @@ SVGTexture CreateSVGTexture(ID3D11Device* device, const char* svgPath, float sca
         nsvgDelete(svgImage);
         return {};
     }
-    SVGTexture result = GetSVGTexture(device, svgImage, scale,release);
+    SVGTexture result = GetSVGTexture(device, svgImage, scale, width, height, release);
     return result;
 }
 

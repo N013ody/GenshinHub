@@ -33,7 +33,7 @@ public:
     void Release();
 
 private:
-    void _UpdateTexture();  //内部纹理更新
+    void _UpdateTexture();  //纹理更新
     bool _InitializeD3DResources( ID3D11Device* device); //初始化D3D资源
 
     std::unique_ptr<rlottie::Animation> _animation;

@@ -51,7 +51,7 @@ private:
     ImGuiPlatformIO& io;
     std::vector<CallBackInfo> CallBacks;
 
-    //…æµÙ ±ÿ–Î∞≤≈≈
+
     CallBackManager(const CallBackManager&) = delete;
     CallBackManager& operator=(const CallBackManager&) = delete;
 

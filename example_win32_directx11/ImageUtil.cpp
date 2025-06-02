@@ -6,7 +6,7 @@
 bool PlayImage(ImTextureID texture, ImVec2 size, int totalFrames, PlayDirection direction,
     float frameDuration, AnimParams& params, bool resetOnStart,bool debugText )
 {
-    //参数有效性检查
+
     if (!texture || totalFrames <= 0 || frameDuration <= 0.0f)
         return false;
 
@@ -23,14 +23,14 @@ bool PlayImage(ImTextureID texture, ImVec2 size, int totalFrames, PlayDirection 
         params.fpsFrames = 0;
     }
 
-    //时间驱动动画更新
+   
     float deltaTime = ImGui::GetIO().DeltaTime;
     if (!params.isCompleted) {
         int previousFrame = params.currentFrame;
         params.currentTime += deltaTime;
         params.currentFrame = static_cast<int>(params.currentTime / frameDuration);
 
-        //动画帧率统计
+      
         if (params.currentFrame != previousFrame) {
             params.fpsFrames++;
             params.fpsTimer += deltaTime;
@@ -42,7 +42,7 @@ bool PlayImage(ImTextureID texture, ImVec2 size, int totalFrames, PlayDirection 
             }
         }
 
-        // 循环/终止逻辑
+      
         if (params.currentFrame >= totalFrames) {
             if (params.isLooping) {
                 params.currentFrame %= totalFrames;
@@ -55,7 +55,7 @@ bool PlayImage(ImTextureID texture, ImVec2 size, int totalFrames, PlayDirection 
         }
     }
 
-    // UV坐标计算
+
     ImVec2 uv0, uv1;
     const float frameUnit = 1.0f / totalFrames;
     switch (direction) {
@@ -77,7 +77,7 @@ bool PlayImage(ImTextureID texture, ImVec2 size, int totalFrames, PlayDirection 
         break;
     }
 
-    // 渲染图像及调试信息
+
     ImGui::Image(texture, size, uv0, uv1);
     if(debugText)
     ImGui::Text("Frame: %d/%d | AnimFPS: %.1f | RenderFPS: %.1f",

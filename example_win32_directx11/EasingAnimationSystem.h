@@ -3,7 +3,9 @@
 #include <memory>
 #include <cmath>
 #include <imgui.h>
-
+/**
+**@file created by n013ody
+**/
 #define IM_EASING_PI 3.14159265358979323846f
 
 namespace ImEasing {
@@ -133,6 +135,16 @@ namespace ImEasing {
     }
 
 
+    enum State { Stopped, Running, Paused };
+
+    struct Params {
+        float duration = 1.0f;//动画持续时间
+        float delay = 0.0f;//延迟时间
+        int loopCount = 1;//循环次数 -1无限循环
+        bool pingPong = false;//来回播放循环动画
+        std::function<float(float)> easing = Ease::Linear;
+    };
+
     class IAnimatable {
     public:
         virtual void Update() = 0;
@@ -166,24 +178,13 @@ namespace ImEasing {
     };
 
     template<typename T>
-    class Animation : public IAnimatable {
+    class Animation  : public IAnimatable {
     public:
         using TriggerAction = std::function<void()>;
         using TriggerPoint = std::pair<float, TriggerAction>;
 
-        // @Params  duration  动画持续时间
-        // @Params  delay  延迟时间
-        // @Params  loopCount  循环次数 -1无限循环
-        // @Params  pingPong  来回播放循环动画
-        struct Params {
-            float duration = 1.0f;
-            float delay = 0.0f;
-            int loopCount = 1;
-            bool pingPong = false;
-            std::function<float(float)> easing = Ease::Linear;
-        };
-  
-        enum State { Stopped, Running, Paused };
+
+
 
         void Start(const T& startVal, const T& endVal, const Params& params = {}) {
             m_start = startVal;
@@ -194,18 +195,16 @@ namespace ImEasing {
             m_progress = 0.0f;
         }
 
-        void Update() override {
-            this->Update(); 
-        }
+
         //更新动画 
-        T Update() {
-            if (m_state != Running) return CurrentValue();
+        void Update() override {
+            if (m_state != Running) return;
 
             const float lastProgress = m_progress; 
  
             const float now = ImGui::GetTime();
             const float elapsed = now - m_startTime - m_params.delay;
-            if (elapsed < 0) return CurrentValue();
+            if (elapsed < 0) return;
 
             m_progress = std::clamp(elapsed / m_params.duration, 0.0f, 1.0f);
             const float t = m_params.easing(m_progress);
@@ -226,7 +225,15 @@ namespace ImEasing {
             if (m_progress >= 1.0f)
                 HandleLoop();
 
-            return current;
+             m_currentValue=current;
+        }
+
+        T GetCurrentValue() const {
+            return m_currentValue;
+        }
+
+        State GetState() const {
+            return m_state;
         }
 
         //注册新的动画
@@ -294,7 +301,7 @@ namespace ImEasing {
             }
         }
 
-        T CurrentValue() const {
+        T CurrentProgress() const {
             return m_progress < 0.5f ? m_start : m_end;
         }
 
@@ -304,6 +311,7 @@ namespace ImEasing {
         float m_startTime = 0.0f;
         float m_progress = 0.0f;
         int m_loopCount = 0;
+        T m_currentValue;
         std::shared_ptr<TypedCallback<T>> m_callback;
         std::vector<TriggerPoint> m_triggers;
     };

@@ -11,7 +11,7 @@ class DropFile : public IDropTarget
 
 private:
 
-    HWND m_hwnd = nullptr;// 关联的窗口句柄
+    HWND m_hwnd = nullptr;//关联的窗口句柄
 
 public:
     std::vector<std::string> files;
@@ -105,6 +105,6 @@ public:
 
     void AttachToWindow(HWND hwnd) {
         m_hwnd = hwnd;
-        CoLockObjectExternal(this, TRUE, FALSE); //防止COM对象被意外释放
+        CoLockObjectExternal(this, TRUE, FALSE); //防止COM对象释放
     }
 };
