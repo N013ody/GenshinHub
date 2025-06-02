@@ -1,6 +1,8 @@
 <!-- 动态徽章区/Animated Badges -->
-<h1 align="center">✨ ImGui 扩展框架 /Dear ImGui Extended Framework</h1>
+<h1 align="center">✨ Dear ImGui 扩展框架 /Dear ImGui Extended Framework</h1>
 
+## License  
+This project is licensed under the [MIT License](LICENSE).  
 
 ## 🚀 核心功能 / Core Features
 
