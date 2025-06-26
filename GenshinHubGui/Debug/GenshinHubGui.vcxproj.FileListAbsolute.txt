@@ -1,0 +1,4 @@
+D:\项目\GenshinHub\GenshinHubGui\Debug\GenshinH.F08E9EFB.Up2Date
+D:\项目\GenshinHub\GenshinHubGui\Debug\GenshinHubGui.exe
+D:\项目\GenshinHub\GenshinHubGui\Debug\DirectXTK.dll
+D:\项目\GenshinHub\GenshinHubGui\Debug\rlottie.dll

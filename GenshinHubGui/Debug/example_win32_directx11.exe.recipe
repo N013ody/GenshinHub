@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>D:\项目\GenshinHub\example_win32_directx11\Debug\example_win32_directx11.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>D:\项目\GenshinHub\example_win32_directx11\Debug\PsShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>D:\项目\GenshinHub\example_win32_directx11\Debug\VsShader.cso</FullPath>
+    </ContentFile>
+  </ContentFiles>
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

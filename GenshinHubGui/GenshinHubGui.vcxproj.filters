@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="GuiMain.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Profile\Profile.cpp" />
+    <ClCompile Include="..\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui_demo.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\backends\imgui_impl_dx11.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\backends\imgui_impl_win32.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui_tables.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="DX11Util.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\MathUtil.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageUtil.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\WindowUtil.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\backends\pimgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_utils.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="LottieAnimator.cpp">
+      <Filter>animation</Filter>
+    </ClCompile>
+    <ClCompile Include="custom_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="CallBackManager.cpp">
+      <Filter>manager</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseWindow.cpp">
+      <Filter>window</Filter>
+    </ClCompile>
+    <ClCompile Include="InstallerWindow.cpp">
+      <Filter>window</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorUtil.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GuiMain.h" />
+    <ClInclude Include="Images.h" />
+    <ClInclude Include="..\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imconfig.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\backends\imgui_impl_dx11.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\backends\imgui_impl_win32.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui_settings.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imstb_rectpack.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="DX11Util.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\MathUtil.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageUtil.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\WindowUtil.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\backends\pimgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_utils.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imstb_textedit.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imstb_truetype.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="EasingAnimationSystem.h">
+      <Filter>animation</Filter>
+    </ClInclude>
+    <ClInclude Include="LottieAnimator.h">
+      <Filter>animation</Filter>
+    </ClInclude>
+    <ClInclude Include="CallBackManager.h">
+      <Filter>manager</Filter>
+    </ClInclude>
+    <ClInclude Include="DropFile.hpp">
+      <Filter>manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager\DropManager.hpp">
+      <Filter>manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SVGCacheManager.hpp">
+      <Filter>manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeHelper.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseWindow.h">
+      <Filter>window</Filter>
+    </ClInclude>
+    <ClInclude Include="InstallerWindow.h">
+      <Filter>window</Filter>
+    </ClInclude>
+    <ClInclude Include="Profile\Profile.h" />
+    <ClInclude Include="ColorUtil.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorAnimator.h">
+      <Filter>animation</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.txt" />
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{b2e65496-fa2e-4655-a33a-d5199cae7118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{b6fa0594-021e-4584-9003-6f677728b5ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="animation">
+      <UniqueIdentifier>{93d3aeaa-0b5c-4469-96be-777794541e3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="manager">
+      <UniqueIdentifier>{cd70c343-f545-4095-9554-d9b156e11cab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="window">
+      <UniqueIdentifier>{ce687d0a-e8c7-450e-b010-8143ac95e57a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

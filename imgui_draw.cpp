@@ -2114,32 +2114,71 @@ static inline ImDrawFlags FixRectCornerFlags(ImDrawFlags flags)
 
 void ImDrawList::PathRect(const ImVec2& a, const ImVec2& b, float rounding, ImDrawFlags flags)
 {
-    if (rounding >= 0.5f)
-    {
-        flags = FixRectCornerFlags(flags);
-        rounding = ImMin(rounding, ImFabs(b.x - a.x) * (((flags & ImDrawFlags_RoundCornersTop) == ImDrawFlags_RoundCornersTop) || ((flags & ImDrawFlags_RoundCornersBottom) == ImDrawFlags_RoundCornersBottom) ? 0.5f : 1.0f) - 1.0f);
-        rounding = ImMin(rounding, ImFabs(b.y - a.y) * (((flags & ImDrawFlags_RoundCornersLeft) == ImDrawFlags_RoundCornersLeft) || ((flags & ImDrawFlags_RoundCornersRight) == ImDrawFlags_RoundCornersRight) ? 0.5f : 1.0f) - 1.0f);
-    }
-    if (rounding < 0.5f || (flags & ImDrawFlags_RoundCornersMask_) == ImDrawFlags_RoundCornersNone)
+   
+    flags = FixRectCornerFlags(flags);
+
+    //动态计算最大允许圆角半径 避免几何错误
+    const float w = b.x - a.x, h = b.y - a.y;
+    const float max_horizontal_rounding = w * 0.5f * (
+        ((flags & ImDrawFlags_RoundCornersTop) || (flags & ImDrawFlags_RoundCornersBottom)) ? 1.0f : 0.5f
+        );
+    const float max_vertical_rounding = h * 0.5f * (
+        ((flags & ImDrawFlags_RoundCornersLeft) || (flags & ImDrawFlags_RoundCornersRight)) ? 1.0f : 0.5f
+        );
+    rounding = ImMin(rounding, ImMin(max_horizontal_rounding, max_vertical_rounding));
+
+    //直角
+    if (rounding < 0.5f)
     {
         PathLineTo(a);
         PathLineTo(ImVec2(b.x, a.y));
         PathLineTo(b);
         PathLineTo(ImVec2(a.x, b.y));
+        return;
     }
+
+    const float rounding_tl = (flags & ImDrawFlags_RoundCornersTopLeft) ? rounding : 0.0f;
+    const float rounding_tr = (flags & ImDrawFlags_RoundCornersTopRight) ? rounding : 0.0f;
+    const float rounding_br = (flags & ImDrawFlags_RoundCornersBottomRight) ? rounding : 0.0f;
+    const float rounding_bl = (flags & ImDrawFlags_RoundCornersBottomLeft) ? rounding : 0.0f;
+
+    //小尺寸矩形特殊处理
+    if (w <= 10.0f || h <= 10.0f)
+    {
+        PathClear();
+      
+        if (rounding_tl > 0.0f)
+            PathArcTo(ImVec2(a.x + rounding_tl, a.y + rounding_tl), rounding_tl, IM_PI, IM_PI * 1.5f);
+        else
+            PathLineTo(a);
+
+
+        if (rounding_tr > 0.0f)
+            PathArcTo(ImVec2(b.x - rounding_tr, a.y + rounding_tr), rounding_tr, IM_PI * 1.5f, IM_PI * 2.0f);
+        else
+            PathLineTo(ImVec2(b.x, a.y));
+
+      
+        if (rounding_br > 0.0f)
+            PathArcTo(ImVec2(b.x - rounding_br, b.y - rounding_br), rounding_br, 0.0f, IM_PI * 0.5f);
+        else
+            PathLineTo(b);
+
+        
+        if (rounding_bl > 0.0f)
+            PathArcTo(ImVec2(a.x + rounding_bl, b.y - rounding_bl), rounding_bl, IM_PI * 0.5f, IM_PI);
+        else
+            PathLineTo(ImVec2(a.x, b.y));
+    }
+    // 大尺寸矩形使用快速PathArcToFast
     else
     {
-        const float rounding_tl = (flags & ImDrawFlags_RoundCornersTopLeft)     ? rounding : 0.0f;
-        const float rounding_tr = (flags & ImDrawFlags_RoundCornersTopRight)    ? rounding : 0.0f;
-        const float rounding_br = (flags & ImDrawFlags_RoundCornersBottomRight) ? rounding : 0.0f;
-        const float rounding_bl = (flags & ImDrawFlags_RoundCornersBottomLeft)  ? rounding : 0.0f;
-        PathArcToFast(ImVec2(a.x + rounding_tl, a.y + rounding_tl), rounding_tl, 6, 9);
-        PathArcToFast(ImVec2(b.x - rounding_tr, a.y + rounding_tr), rounding_tr, 9, 12);
-        PathArcToFast(ImVec2(b.x - rounding_br, b.y - rounding_br), rounding_br, 0, 3);
-        PathArcToFast(ImVec2(a.x + rounding_bl, b.y - rounding_bl), rounding_bl, 3, 6);
+        PathArcToFast(ImVec2(a.x + rounding_tl, a.y + rounding_tl), rounding_tl, 6, 9);   
+        PathArcToFast(ImVec2(b.x - rounding_tr, a.y + rounding_tr), rounding_tr, 9, 12);  
+        PathArcToFast(ImVec2(b.x - rounding_br, b.y - rounding_br), rounding_br, 0, 3);   
+        PathArcToFast(ImVec2(a.x + rounding_bl, b.y - rounding_bl), rounding_bl, 3, 6);    
     }
 }
-
 void ImDrawList::AddLine(const ImVec2& p1, const ImVec2& p2, ImU32 col, float thickness)
 {
     if ((col & IM_COL32_A_MASK) == 0)
@@ -2166,6 +2205,8 @@ void ImDrawList::AddRectFilled(const ImVec2& p_min, const ImVec2& p_max, ImU32 c
 {
     if ((col & IM_COL32_A_MASK) == 0)
         return;
+
+
     if (rounding < 0.5f || (flags & ImDrawFlags_RoundCornersMask_) == ImDrawFlags_RoundCornersNone)
     {
         PrimReserve(6, 4);
